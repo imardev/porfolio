@@ -26,7 +26,7 @@ El objetivo del portfolio es:
 - JavaScript.
 - Bootstrap.
 
-### Backend
+<!-- ### Backend
 
 - Node.js.
 - Express.
@@ -36,7 +36,7 @@ El objetivo del portfolio es:
 ### Base de datos
 
 - PostgreSQL.
-- Neon.
+- Neon. -->
 
 ### Servicios y herramientas
 
