@@ -2,6 +2,17 @@
 const btn = document.querySelector(".modes-btn");
 const darkModeIcon = document.querySelector(".darkmode");
 const lightModeIcon = document.querySelector(".lightmode");
+
+if (!localStorage.getItem("theme")) {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (prefersDark) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+}
+
 const mode = localStorage.getItem("theme");
 
 // Función para cambiar el modo
@@ -21,10 +32,11 @@ function changueMode() {
 
 // Codigo principal
 // Detectar si en el localstorage tiene el theme con dark
+
 if (mode === "dark") {
   darkModeIcon.classList.add("active");
   lightModeIcon.classList.remove("active");
-  btn.classList.toggle("active");
+  btn.classList.add("active");
   document.body.classList.add("dark");
   document.documentElement.classList.add("dark");
 }
