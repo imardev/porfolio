@@ -1,10 +1,11 @@
 async function FetchProjects() {
-  const res = await fetch("./data/proyectos.json");
+  const res = await fetch("https://porfolio-api.ismartin.com/api/proyectos");
   if (!res.ok) {
     throw new Error(`HTTP ${res.status}`);
   }
 
   const data = await res.json();
+  console.log(data);
   return data;
 }
 
@@ -14,20 +15,24 @@ async function LoadProjects() {
   proyectos.forEach((proyecto) => {
     proyectosContainer.innerHTML += `
         <div class="card">
-            <img src="${proyecto.image}" alt="">
+            <img src="${proyecto.img_url}" alt="">
+            
             <div class="stack" id="stackPill">
-                ${proyecto.technologies
-                  .map((tech) => `<div class="stack-pill pill1">${tech}</div>`)
+                ${proyecto.tecnologias
+                  .map(
+                    (tech) =>
+                      `<div class="stack-pill pill1">${tech.nombre}</div>`,
+                  )
                   .join("")}
             </div>
             <div class="details">
-                <h3 class="title">${proyecto.title}</h3>
+                <h3 class="title">${proyecto.nombre}</h3>
                 <p class="description">
-                    ${proyecto.description}
+                    ${proyecto.descripcion}
                 </p>
             </div>
             <div class="btns">
-                <a href="${proyecto.web}" class="btn btn-primary" target="_blank">
+                <a href="${proyecto.web_url}" class="btn btn-primary" target="_blank">
                     Ver Web
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
