@@ -1,0 +1,17 @@
+
+node_modules
+.pnpm-store
+
+.env
+.env.*
+!.env.example
+
+.git
+.gitignore
+
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+src/generated/prisma
+coverage
