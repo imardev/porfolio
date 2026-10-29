@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Proyecto {
+  id          Int @id @default(autoincrement())
+  nombre      String
+  descripcion String
+  slug        String @unique
+  web_url     String
+  github      String
+  img_url     String
+  tecnologias  Tecnologia[]
+}
+
+model Tecnologia {
+  id          Int @id @default(autoincrement())
+  nombre      String
+  slug        String @unique
+  proyectos   Proyecto[]
+}
