@@ -5,7 +5,6 @@ async function FetchProjects() {
   }
 
   const data = await res.json();
-  console.log(data);
   return data;
 }
 
