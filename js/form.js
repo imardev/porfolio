@@ -5,7 +5,7 @@ const email = document.querySelector(".input-email");
 const messageName = document.getElementById("messageName");
 const messageEmail = document.getElementById("messageEmail");
 
-const emailRegex = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 // Codigo Principal
 
 form.addEventListener("submit", function (e) {
@@ -13,8 +13,11 @@ form.addEventListener("submit", function (e) {
   const nameValue = name.value.trim();
   let valid = true;
 
-  if (nameValue.length < 3 || nameValue.length > 20) {
-    messageName.textContent = "El nombre debe tener entre 3 y 20 caracteres";
+  messageName.textContent = "";
+  messageEmail.textContent = "";
+
+  if (nameValue.length < 2 || nameValue.length > 100) {
+    messageName.textContent = "El nombre debe tener entre 2 y 100 caracteres";
     messageName.style.color = "red";
     valid = false;
   }

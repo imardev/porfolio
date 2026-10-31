@@ -2,5 +2,6 @@ const menuBtn = document.getElementById("mobileBtn");
 const menuMobile = document.getElementById("mobileNav");
 
 menuBtn.addEventListener("click", () => {
-  menuMobile.classList.toggle("active");
+  const isOpen = menuMobile.classList.toggle("active");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
 });
