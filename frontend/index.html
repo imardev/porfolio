@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/favicon.ico">
+    <link rel="icon" href="./img/icon.ico">
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
     <title>Ismael Martín | Desarrollador Web Front-End</title>
     <meta name="description"
-        content="Portfolio de Ismael Martín, desarrollador web especializado en HTML, CSS, JavaScript, React y aplicaciones modernas.">
+        content="Portfolio de Ismael Martín, estudiante de Desarrollo de Aplicaciones Web y desarrollador front-end. Proyectos con HTML, CSS, JavaScript y React.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -21,8 +21,8 @@
     <script defer src="https://cloud.umami.is/script.js"
         data-website-id="9a302972-a6c0-47fe-9939-e3cdced2ae36"></script>
     <link rel="canonical" href="https://ismartin.com/">
-    <meta property="og:title" content="Ismael Martín | Desarrollador web Front-End">
-    <meta property="og:description" content="Portfolio profesional de desarrollo web moderno y responsive.">
+    <meta property="og:title" content="Ismael Martín | Desarrollador Web Front-End">
+    <meta property="og:description" content="Portfolio de Ismael Martín, estudiante de Desarrollo de Aplicaciones Web y desarrollador front-end.">
     <meta property="og:image" content="https://ismartin.com/public/portfolio-preview.jpg">
     <meta property="og:image:secure_url" content="https://ismartin.com/public/portfolio-preview.jpg">
     <meta property="og:image:width" content="1200">
@@ -35,8 +35,8 @@
     <meta property="og:locale" content="es_ES">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ismael Martín | Desarrollador web Front-End">
-    <meta name="twitter:description" content="Portfolio profesional de desarrollo web moderno y responsive.">
+    <meta name="twitter:title" content="Ismael Martín | Desarrollador Web Front-End">
+    <meta name="twitter:description" content="Portfolio de Ismael Martín, estudiante de Desarrollo de Aplicaciones Web y desarrollador front-end.">
     <meta name="twitter:image" content="https://ismartin.com/public/portfolio-preview.jpg">
     <meta name="twitter:image:alt" content="Vista previa del portfolio de Ismael Martín">
     <script type="application/ld+json">
@@ -46,7 +46,7 @@
           "name": "Ismael Martín",
           "url": "https://ismartin.com/",
           "jobTitle": "Desarrollador Web Front-End",
-          "description": "Desarrollador web especializado en HTML, CSS, JavaScript, React y aplicaciones modernas.",
+          "description": "Estudiante de Desarrollo de Aplicaciones Web y desarrollador front-end. Trabaja con HTML, CSS, JavaScript y React.",
           "sameAs": [
             "https://github.com/imardev",
             "https://linkedin.com/in/imardev"
@@ -66,7 +66,7 @@
 <body>
     <!-- Barra de navegación -->
     <header>
-        <button class="mobile-menu" id="mobileBtn">
+        <button class="mobile-menu" id="mobileBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
             &#9776;
         </button>
         <nav id="navbar">
@@ -82,7 +82,7 @@
             <a href="#scrollspyHeading2">Proyectos</a>
             <a href="./contacto.html">Contacto</a>
         </nav>
-        <button class="modes-btn" id="theme-btn">
+        <button class="modes-btn" id="theme-btn" aria-label="Cambiar entre tema claro y oscuro">
             <div class="darkmode">
                 <img src="./img/moon.svg" alt="">
             </div>
@@ -96,11 +96,9 @@
         <section class="hero">
             <div class="principal">
                 <h1>Ismael Martín</h1>
-                <h2 class="rol">Desarrollador Web Front-End</h2>
+                <p class="rol">Desarrollador Web Front-End</p>
                 <p class="description">
-                    Actualmente formándome como desarrollador Front-End y aprendiendo a crear aplicaciones web modernas
-                    y
-                    bien
+                    Me estoy formando como desarrollador Front-End y aprendo a crear aplicaciones web modernas y bien
                     diseñadas.
                 </p>
 
@@ -118,14 +116,14 @@
                 </div>
             </div>
             <div class="ilustracion">
-                <img src="./img/coding-2-22.png" alt="">
+                <img src="./img/coding-2-22.webp" alt="" width="1563" height="1563" fetchpriority="high">
             </div>
         </section>
         <!-- Sección de sobre mi -->
         <section id="scrollspyHeading1" class="sobre-mi">
             <h2>Sobre mí</h2>
             <p>
-                Soy estudiante de Desarrollo de Aplicaciones Web y actualmente estoy centrado en seguir creciendo como
+                Soy estudiante de Desarrollo de Aplicaciones Web y estoy centrado en seguir creciendo como
                 desarrollador.
             </p>
             <p>
@@ -136,7 +134,7 @@
                 de hacer las cosas mejor.
             </p>
             <p>
-                Actualmente estoy ampliando mis conocimientos en programación, desarrollo web y bases de datos.
+                Ahora estoy ampliando mis conocimientos en programación, desarrollo web y bases de datos.
                 Compagino mi formación
                 con proyectos propios, donde puedo poner en práctica lo que voy aprendiendo y experimentar con nuevas
                 tecnologías y
@@ -161,7 +159,6 @@
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                 </svg>
             </a>
-            </div>
         </section>
         <!-- Sección de proyectos -->
         <section id="scrollspyHeading2" class="proyectos">

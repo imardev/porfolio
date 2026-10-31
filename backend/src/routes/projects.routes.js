@@ -62,4 +62,17 @@ router.post("/", writeLimiter, requireWriteKey, async (req, res) => {
     });
   }
 });
+
+router.delete("/:id", writeLimiter, requireWriteKey, async (req, res) => {
+  const id = Number(req.params.id);
+  if (!Number.isInteger(id)) {
+    return res.status(400).json({ error: "ID inválido" });
+  }
+  const deleteProject = await prisma.proyecto.delete({
+    where: {
+      id: id,
+    },
+  });
+  res.status(204).json(deleteProject);
+});
 export default router;

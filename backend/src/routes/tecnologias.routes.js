@@ -41,4 +41,17 @@ router.post("/", writeLimiter, requireWriteKey, async (req, res) => {
     });
   }
 });
+
+router.delete("/:id", writeLimiter, requireWriteKey, async (req, res) => {
+  const id = Number(req.params.id);
+  if (!Number.isInteger(id)) {
+    return res.status(400).json({ error: "ID inválido" });
+  }
+  const deleteTech = await prisma.tecnologia.delete({
+    where: {
+      id: id,
+    },
+  });
+  res.status(204).json(deleteTech);
+});
 export default router;

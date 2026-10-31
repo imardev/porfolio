@@ -29,13 +29,14 @@
 .hero {
   margin: 12.8rem auto 0;
   display: grid;
-  gap: 20rem;
-  grid-template-columns: repeat(2, 0.3fr);
-  width: fit-content;
+  gap: 2rem;
+  grid-template-columns: minmax(18rem, 30rem) minmax(0, 40rem);
+  justify-content: space-between;
+  width: min(90rem, calc(100% - 4rem));
 }
 
 .hero .principal {
-  width: 30rem;
+  width: 100%;
 }
 
 .hero h1 {
@@ -46,8 +47,11 @@
 
 .hero .rol {
   margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
   width: 18rem;
   font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.2;
   color: var(--text-secundary);
 }
 
@@ -58,7 +62,8 @@
 }
 
 .hero .ilustracion img {
-  width: 40rem;
+  width: 100%;
+  height: auto;
 }
 
 .hero .btns {

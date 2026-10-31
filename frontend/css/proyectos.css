@@ -25,7 +25,7 @@
 }
 
 .proyectos {
-  width: 98rem;
+  width: min(98rem, calc(100% - 4rem));
   margin: 8rem auto;
   scroll-margin-top: 90px;
 }
@@ -37,13 +37,13 @@
 
 .proyectos p {
   color: var(--text-secundary);
-  width: 50rem;
+  width: min(50rem, 100%);
   margin-top: 1rem;
 }
 
 .project-cards .card {
-  width: 40rem;
-  height: 46rem;
+  width: 100%;
+  min-height: 46rem;
   display: flex;
   align-items: center;
   background: var(--light-card-bg);
@@ -51,8 +51,8 @@
 
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: fit-content;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(84rem, 100%);
   gap: 4rem;
   margin: 4rem auto;
 }
@@ -66,20 +66,22 @@
 
 .project-cards .card .title {
   margin-top: 1rem;
-  height: 5rem;
+  min-height: 5rem;
+  padding: 0 1rem;
   color: var(--text-color);
   text-align: center;
 }
 
 .project-cards .card .description {
   text-align: center;
-  width: 30rem;
-  height: 8rem;
+  width: min(30rem, calc(100% - 2rem));
+  min-height: 8rem;
+  margin-bottom: 1rem;
   color: var(--text-secundary);
 }
 
 .project-cards .card img {
-  width: 39.9rem;
+  width: 100%;
   height: 20rem;
   border-radius: 5px 5px 0 0;
   object-fit: cover;
@@ -88,10 +90,13 @@
 .project-cards .card .btns {
   display: flex;
   gap: 2rem;
+  margin-top: auto;
+  padding-bottom: 1.5rem;
 }
 
 .project-cards .card .stack {
   display: flex;
+  flex-wrap: wrap;
   width: fit-content;
   justify-content: center;
   gap: 2rem;
@@ -154,6 +159,7 @@
 
   .project-cards .card {
     width: 18rem;
+    min-height: 0;
     height: 36rem;
     display: flex;
     align-items: center;
@@ -177,6 +183,8 @@
 
   .project-cards .card .title {
     margin-top: 1rem;
+    min-height: 0;
+    padding: 0;
     height: fit-content;
     color: var(--text-color);
     text-align: center;
@@ -203,6 +211,8 @@
   .project-cards .card .btns {
     display: flex;
     gap: 1rem;
+    margin-top: 0;
+    padding-bottom: 0;
   }
 
   .project-cards .card .stack {

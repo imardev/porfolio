@@ -36,7 +36,7 @@ main {
 form {
   background-color: rgb(248, 248, 248);
   padding: 2rem;
-  width: 60rem;
+  width: min(60rem, calc(100vw - 4rem));
   border-radius: 12px;
   -webkit-box-shadow: 4px 3px 32px -20.5px #000000;
   -moz-box-shadow: 4px 3px 32px -20.5px #000000;
@@ -218,5 +218,19 @@ form .form-select option {
 
   #submitBtn {
     margin-top: 1rem;
+  }
+}
+
+.privacy-note {
+  font-size: 0.85rem;
+  color: var(--text-secundary);
+}
+
+/* El widget de hCaptcha mide 302px de ancho fijo */
+@media (max-width: 380px) {
+  #captcha {
+    transform: scale(0.78);
+    transform-origin: 0 0;
+    height: 62px;
   }
 }

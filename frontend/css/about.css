@@ -27,7 +27,7 @@
 /* Estilos sección sobre mi */
 
 .sobre-mi {
-  width: 98rem;
+  width: min(98rem, calc(100% - 4rem));
   margin: 8rem auto 0;
   scroll-margin-top: 90px;
 }
@@ -39,13 +39,14 @@
 
 .sobre-mi p {
   color: var(--text-secundary);
-  width: 80rem;
+  width: min(80rem, 100%);
   font-size: 1.2rem;
   margin-top: 2rem;
 }
 
 .techs-pills {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 3rem;
 }
