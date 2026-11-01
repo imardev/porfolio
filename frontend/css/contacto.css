@@ -226,6 +226,11 @@ form .form-select option {
   color: var(--text-secundary);
 }
 
+.dark .privacy-note {
+  font-size: 0.85rem;
+  color: var(--dark-text-secundary);
+}
+
 /* El widget de hCaptcha mide 302px de ancho fijo */
 @media (max-width: 380px) {
   #captcha {
