@@ -75,4 +75,63 @@ router.delete("/:id", writeLimiter, requireWriteKey, async (req, res) => {
   });
   res.status(204).json(deleteProject);
 });
+
+router.put("/:id", writeLimiter, requireWriteKey, async (req, res) => {
+  const id = Number(req.params.id);
+  if (!Number.isInteger(id)) {
+    return res.status(400).json({ error: "ID inválido" });
+  }
+
+  const result = projectSchema.safeParse(req.body);
+
+  if (!result.success) {
+    return res.status(400).json({
+      error: "Datos inválidos",
+      detalles: result.error.issues,
+    });
+  }
+  const { nombre, descripcion, slug, web_url, github, img_url, tecnologias } =
+    result.data;
+  try {
+    const existing = await prisma.proyecto.findUnique({
+      where: { id },
+      select: { id: true },
+    });
+    if (!existing) {
+      return res.status(404).json({ error: "Proyecto no encontrado" });
+    }
+
+    const project = await prisma.proyecto.update({
+      where: { id },
+      data: {
+        nombre,
+        descripcion,
+        slug,
+        web_url,
+        github,
+        img_url,
+        tecnologias: {
+          set: tecnologias.map((slug) => ({ slug })),
+        },
+      },
+      include: { tecnologias: true },
+    });
+
+    return res.status(200).json(project);
+  } catch (error) {
+    if (error.code === "P2002") {
+      return res
+        .status(409)
+        .json({ error: "Ya existe un proyecto con ese slug" });
+    }
+    if (error.code === "P2025") {
+      return res
+        .status(400)
+        .json({ error: "Una de las tecnologías indicadas no existe" });
+    }
+    console.error("Error al actualizar el proyecto:", error);
+    return res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
 export default router;
