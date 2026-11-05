@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="./css/contacto.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <script defer src="https://cloud.umami.is/script.js"
-        data-website-id="9a302972-a6c0-47fe-9939-e3cdced2ae36"></script>
+    <script src="https://js-de.sentry-cdn.com/7bce4f652b23c4093b86613784190708.min.js" crossorigin="anonymous"></script>
     <meta property="og:title" content="Contacto | Ismael Martín, Desarrollador Web">
     <meta property="og:description"
         content="Contacta con Ismael Martín para proyectos, colaboraciones y oportunidades profesionales.">
@@ -38,7 +37,8 @@
 <body>
     <!-- Barra de navegación -->
     <header>
-        <button class="mobile-menu" id="mobileBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+        <button class="mobile-menu" id="mobileBtn" aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="mobileNav">
             &#9776;
         </button>
         <nav id="navbar">
@@ -86,7 +86,8 @@
 
             </div>
             <div class="form-floating mb-3 email">
-                <input type="text" class="form-control" id="contactCompany" placeholder="Empresa S.L." name="company" autocomplete="organization">
+                <input type="text" class="form-control" id="contactCompany" placeholder="Empresa S.L." name="company"
+                    autocomplete="organization">
                 <label for="contactCompany">Empresa (opcional)</label>
             </div>
             <select class="form-select mb-3" aria-label="Tipo de oportunidad" name="opportunity_type" required>
@@ -106,8 +107,10 @@
             </div>
             <input type="text" name="botcheck" style="display: none;" />
             <div class="h-captcha" data-captcha="true" id="captcha"></div>
-            <p class="privacy-note">Usaré estos datos solo para responder a tu mensaje. El formulario se envía a través de
-                <a href="https://web3forms.com/" target="_blank">Web3Forms</a>.</p>
+            <p class="privacy-note">Usaré estos datos solo para responder a tu mensaje. El formulario se envía a través
+                de
+                <a href="https://web3forms.com/" target="_blank">Web3Forms</a>.
+            </p>
             <button type="submit" class="btn btn-primary" id="submitBtn">Contactar</button>
         </form>
     </main>
